@@ -49,15 +49,42 @@ body{
     width: fit-content;
     padding: 8px 35px;
 }
+p{
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 24px;
+    margin-top: 30px;
+    color: #541412;
+
+}
+.fleche{
+    width: 100%;
+    margin: 130px 0;
+    text-align: center;
+}
+
+
+
 @media screen and (max-width: 800px) {
     
     body{
         margin: 0;
-        background-color: red; 
-        /*width: 100%;*/
-    }
-    .rouge h2{
-        display: none;
+        width: 100%;
     }
 
+    #rouge-titre{
+        width: 100%;
+        background-color: #C34F5A;
+
+    }
+    .rouge h2{
+        font-size: 18px;
+    }
+    p{
+        font-size: 18px;
+        margin: 5vh 10px;
+    }
+    .fleche{
+        display: none;
+    }
 }
