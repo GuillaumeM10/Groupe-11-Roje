@@ -38,6 +38,7 @@
                 y = y + 1;
                 x = 0;
             }
+
         }
 
         //alert("width=" + width);
@@ -48,8 +49,16 @@
         ///////////////////////////////////////////////////////////////////
         // passage des tableaux 2D (t?) à un tableau 1D (pix)
         var i = 0;
-        for (var x = 0; x < width; x++) {
-            for (var y = 0; y < height/2; y++) {
+        for (var x = 0; x < width; x = + 2 ){
+            for (var y = 0; y < height; y++) {
+                
+                tr[x][y] = 255;
+                tg[x][y] = 255;
+                tb[x][y] = 255;
+                ta[x][y] = 255;
+
+                console.log(tr[x][y]);
+                
                 pix[i] = tr[x][y];
                 pix[i + 1] = tg[x][y];
                 pix[i + 2] = tb[x][y];
@@ -57,7 +66,7 @@
                 i = i + 4;
             }
         }
-        console.log(y);
+
         console.log(pix[3]);
         imgd.data = pix;
 
