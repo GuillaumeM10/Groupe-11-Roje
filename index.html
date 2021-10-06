@@ -55,6 +55,7 @@ Elle représente autant de significations que le feu sacré et les flammes de l'
 					<h2 class="rouge-titre">CAMPBELL’S SOUP CANS</h2>
 					<img src="img/Le-roi-rouge.jpg" id="photo2" alt="" class="img2">
 					<canvas id="mycanvas2"></canvas>
+					
 				</div>
 				<div class="right">
 					<div class="">
@@ -74,7 +75,18 @@ Elle représente autant de significations que le feu sacré et les flammes de l'
 							" class="source" target="_blanc">Source 2</a>
 						</div>
 					</div>
-					<button onclick="noir();">ACTIVER LE FILTRE</button>
+					<div class="control">
+						<label>Luminosité : <span id="valeurLumi">0</span></label>
+						<br>
+						<input id="lumi" type="range" value="0" min="-100" max="100">
+						<br>
+						<!-- <label for="ContrastSlider">Contrast (<span id="ContrastValue">0</span>)</label>
+						<br>
+						<input type="range" id="ContrastSlider" value="0" min="-100" max="100"> -->
+						<button class="btnGuillaume" id="load">ACTIVER LE FILTRE</button>
+						<button class="btnGuillaume" id="reload">RELOAD</button>
+					</div>
+
 				</div>
 			</div>
 
