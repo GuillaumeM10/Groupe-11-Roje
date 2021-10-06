@@ -164,7 +164,7 @@ button{
     .fleche{
         display: none;
     }
-    .img1, .img2{
+    .img, .img2{
         width: 100% !important;
     }
     .soup_left{
@@ -180,5 +180,8 @@ button{
     }
     .text{
         width: 100%;
+    }
+    button{
+        margin: 10vh auto;
     }
 }
