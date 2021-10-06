@@ -216,8 +216,15 @@ footer p{
     .text{
         width: 100%;
     }
+    .control{
+        text-align: center;
+        margin-top: 10px;
+    }
     button{
         margin: 10vh auto;
+    }
+    .btnGuillaume{
+        margin: 10px auto;
     }
     footer{
         margin: 0;
