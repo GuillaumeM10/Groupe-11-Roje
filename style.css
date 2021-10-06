@@ -158,7 +158,13 @@ footer p{
     padding: 30px 280px;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1110px) {
+    body{
+        margin: 0 100px 0 100px;
+    }
+}
+
+@media screen and (max-width: 800px) {
     
     body{
         margin: 0;
