@@ -9,36 +9,29 @@
     <body>
 		
 		<nav>
-			<img src="/Groupe-11-Roje/img/ROJE.png" alt="">
+			<img src="img/ROJE.png" alt="">
 			<div class="ligne"></div>
 		</nav>
-		<div class="capture">
-			<video id="video">Video stream not available.</video>
-			<button id="startbutton">Take photo</button> 
-			<button id="invertbutton">Mon filtre</button> 
-			<canvas id="mycanvas"></canvas>
-			<img id="photo" alt="The screen capture will appear in this box.">
-		</div>
+		
 		<div class="rouge">
-			<h2 id="rouge-titre">QU'EST CE QUE LE ROUGE ?</h2>
-			<p>
-				La couleur rouge est ambivalente dans l’occident : 
+			<h2 class="rouge-titre">QU'EST CE QUE LE ROUGE ?</h2>
+			<p>La couleur rouge est ambivalente dans l’occident : 
 Elle représente autant de significations que le feu sacré et les flammes de l'enfer, l'amour vrai et le sang des crimes. L’homme a maitrîsé le rouge très tôt, notamment dans les peintures à l’âge paléolithique.
 			</p>
-			<p>
-
-Par extension, le rouge est également un signe de puissance, de souveraineté, une couleur révêtue tout en haut de la hiérarchie dans le culte catholique. C’est la couleur du grade le plus élevé en karaté et au judo (9e et 10e dan). C’est également un symbole de révolution, souvent visible dans les affiches de propagandes. Pyschologiquement c’est une couleur qui réprésente aussi bien la joie de vivre que la passion, la vigueur ou le désir amoureux. C’est aussi un signe d’interdiction et d’avertissement, souvent utilisé dans la signalisation, en effet la visibilité de cette couleur la rend facilement distinguable, c’est pour celà qu’elle est utilisée par les pompiers. C’est enfin un signe de sanction / correction comme le carton rouge au football, ou le stylo rouge utilisé par les professeurs. 
+			<p>Par extension, le rouge est également un signe de puissance, de souveraineté, une couleur révêtue tout en haut de la hiérarchie dans le culte catholique. C’est la couleur du grade le plus élevé en karaté et au judo (9e et 10e dan). C’est également un symbole de révolution, souvent visible dans les affiches de propagandes. Pyschologiquement c’est une couleur qui réprésente aussi bien la joie de vivre que la passion, la vigueur ou le désir amoureux. C’est aussi un signe d’interdiction et d’avertissement, souvent utilisé dans la signalisation, en effet la visibilité de cette couleur la rend facilement distinguable, c’est pour celà qu’elle est utilisée par les pompiers. C’est enfin un signe de sanction / correction comme le carton rouge au football, ou le stylo rouge utilisé par les professeurs. 
 			</p>
 			<div class="fleche">
-				<a href="#selec"><img src="/Groupe-11-Roje/img/fleche.svg" id="fleche"></a>
+				<a href="#selec"><img src="img/fleche.svg" id="fleche"></a>
 			</div>
 		</div>
+
 		<div class="selec">
 			<h3 id="selec">Notre sélection d’oeuvres</h3>
 			<div class="soup">
 				<div class="left">
-					<h2 id="rouge-titre">CAMPBELL’S SOUP CANS</h2>
-					<img src="/Groupe-11-Roje/img/Soup.jpg" alt="" class="img">
+					<h2 class="rouge-titre">CAMPBELL’S SOUP CANS</h2>
+					<img src="img/Soup.jpg" id="photo" alt="" class="img">
+					<canvas id="mycanvas"></canvas>
 				</div>
 				<div class="right">
 					<div class="">
@@ -51,24 +44,27 @@ Par extension, le rouge est également un signe de puissance, de souveraineté, 
 						<div class="sources">
 							<p class="source_titre">Sources utilisées : </p>
 							<a href="https://fr.wikipedia.org/wiki/Campbell%27s_Soup_Cans" class="source" target="_blanc">Source 1</a>
-							<a class="source">Source 2</a>
 						</div>
 					</div>
-					<button>ACTIVER LE FILTRE</button>
+					<button onclick="negatif();">ACTIVER LE FILTRE</button>
 				</div>
 			</div>
+
 			<div class="roi">
 				<div class="left">
-					<h2 id="rouge-titre">CAMPBELL’S SOUP CANS</h2>
-					<img src="/Groupe-11-Roje/img/Le-roi-rouge.jpg" alt="" class="img2">
+					<h2 class="rouge-titre">CAMPBELL’S SOUP CANS</h2>
+					<img src="img/Le-roi-rouge.jpg" id="photo2" alt="" class="img2">
+					<canvas id="mycanvas2"></canvas>
 				</div>
 				<div class="right">
 					<div class="">
 						<h4>ANDY WARHOL - 1962</h4>
 						<div class="text">
-							<p>L’oeuvre du mouvement pop art est une nature morte, peinte à l’acrylique en sérigraphie sur toile.</p>
-							<p>La peinture mesure 510 cm de large et 410 cm de hauteur, elle est composé de 32 toiles mesurant chacun 50,8 cm de hauteur pour 40,6 cm de large.</p>
-							<p>Elles ont été fabriquées via un procédé sérigraphique semi-mécanique, dans un style non pictural.</p>
+							<p>Cette Œuvre est l’une des 22 illustration du Splendor Solis Harley Ms.3469.</p>
+							<p>Les Sept Flasques</p>
+							<p>Sur les 22 illustration qu’est composé le livre d’où elle vient celle-ci est la 18e, elle se nomme « Lune -roi rouge » et elle fait partie de la série « Les Sept Flasques ».</p>
+							<p>On voit en son centre un roi dans une sorte de bouteille en verre couronnée. Il est vêtu tout de rouge. </p>
+							<p>C’est un symbole fort signifiant la force de la noblesse contrairement à l’arrière-plan qui est beaucoup plus fade et qui représente le peuple, les paysans.</p>
 						</div>
 						<div class="sources">
 							<p class="source_titre">Sources utilisées : </p>
@@ -78,12 +74,46 @@ Par extension, le rouge est également un signe de puissance, de souveraineté, 
 							" class="source" target="_blanc">Source 2</a>
 						</div>
 					</div>
-					<button>ACTIVER LE FILTRE</button>
+					<button onclick="noir();">ACTIVER LE FILTRE</button>
+				</div>
+			</div>
+
+			<div class="untiltled">
+				<div class="left">
+					<h2 class="rouge-titre">KEITH HARING - 1982</h2>
+					<img src="img/Untiltled.jpg" id="photo3" alt="" class="img2">
+					<canvas id="mycanvas3"></canvas>
+				</div>
+				<div class="right">
+					<div class="">
+						<h4>ANDY WARHOL - 1962</h4>
+						<div class="text">
+							<p>La créativité ludique et colorée d’un artiste underground de l’art Graffiti et de la Bad Painting, dans les années 1980 aux Etats-Unis</p>
+							<p>Cette oeuvre est une acrylique sur vinyle, et fait partie du mouvement de l'art contemporain</p>
+							<p>Elle mesure 457cm de large pour 457cm de hauteur.</p>
+						</div>
+						<div class="sources">
+							<p class="source_titre">Sources utilisées : </p>
+							<a href="http://patrimonio-ediciones.com/fr/facsimil/splendor-solis-traite-dalchimie" class="source" target="_blanc">Source 1</a>
+							<a href="https://commons.wikimedia.org/wiki/File:Splendor_Solis_-_Trait%C3%A9_d%27Alchimie_-_Lune_-_Le_roi_rouge_
+							(Les_Sept_Flasques).jpg
+							" class="source" target="_blanc">Source 2</a>
+						</div>
+					</div>
+					<button onclick="bleu();">ACTIVER LE FILTRE</button>
 				</div>
 			</div>
 		</div>
+
+		<footer>
+			<p>ROJE © - Copyright 2021</p>
+		</footer>
 		
-		<script src="capture.js"></script>
+		<!-- <input type="file" id="file_input" onchange="imgLoad();"> -->
+			
 		<script src="filter.js"></script>
+		<script src="filter2.js"></script>
+		<script src="filter3.js"></script>
 	</body>
+
 </html>

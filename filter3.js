@@ -4,47 +4,47 @@
 // factorser le code (utilisation de boucle)
 
 // DEBUGAGE ;)
-// bug de syntaxe : utiliser le inspecteur  pour la localiser 
-// bug de fonctionnement : utiliser les console.log pour la localiser (voir les différences entre le resultat obtenu et celui attendu
+// bug de syn2xe : utiliser le inspecteur  pour la localiser 
+// bug de fonctionnement : utiliser les console.log pour la localiser (voir les différences entr2e le resul2t obtenu et celui attendu
 
-"use strict";
+"use str3ict";
 // function imgLoad(){
 // 	var URL = window.webkitURL || window.URL;
-// 	document.getElementById("photo").src = URL.createObjectURL(document.getElementById("file_input").files[0]);
+// 	document.getElemen2yId("photo3").src = URL.createObjectURL(document.getElemen2yId("file_input").files[0]);
 // 	console.log(file_input);
 // }
 
 var tr, tg, tb, ta;
 var width, height; 
-var photo, canvas;
+var photo3, canvas;
 var pix, imgd, context;
 
-function prefilter(){
+function prefilter3(){
 	
-	photo = document.getElementById('photo');
-	canvas = document.getElementById('mycanvas');
+	photo3 = document.getElementById('photo3');
+	canvas = document.getElementById('mycanvas3');
 	context = canvas.getContext('2d');
 
 	var x = 0;
 	var y = 0;
 		
 	// redimensionne le canevas aux dimensions de l'image
-	width = photo.width;
-	height = photo.height;
+	width = photo3.width;
+	height = photo3.height;
 	canvas.width = width;
 	canvas.height = height;
 
 	// recopie l'image dans le canevas
-	context.drawImage(photo, 0, 0, width, height);
+	context.drawImage(photo3, 0, 0, width, height);
 	
-	// extrait le tableau de pixels du canevas
-	imgd = context.getImageData(0, 0, photo.width, photo.height);
+	// extr2ait le 2bleau de pixels du canevas
+	imgd = context.getImageData(0, 0, photo3.width, photo3.height);
 	pix = imgd.data;
 
 
 	// PASSAGE EN 1D POUR SIMPLIFIER LA GESTION DU VOISINAGE
-	// 1 tab 1D -> 4 tab 2D (r,g,b,a) 
-	// déclaration de 4 tableaux à 2 dim (de taille width * height)
+	// 1 2b 1D -> 4 2b 2D (r,g,b,a) 
+	// déclaration de 4 2bleaux à 2 dim (de 2ille width * height)
 	tr = new Array(width).fill().map(() => Array(height));
 	tg = new Array(width).fill().map(() => Array(height));
 	tb = new Array(width).fill().map(() => Array(height));
@@ -63,9 +63,9 @@ function prefilter(){
 	}
 }
 
-function postfilter(){
+function postfilter3(){
 	// RETOUR EN 1D POUR AFFICHER LES MODIFICATIONS
-	// 4 tab 2D (r,g,b,a) -> 1 tab 1D POUR METTRE A JOUR L'IMAGE
+	// 4 2b 2D (r,g,b,a) -> 1 2b 1D POUR METTR2E A JOUR L'IMAGE
 	for (var y = 0; y < height; y++) { 
 		for (var x = 0; x < width; x++) {
 			pix[x*4+y*(width*4)+0] = tr[x][y];
@@ -75,31 +75,32 @@ function postfilter(){
 		}
 	}
 
-	// Draw the ImageData at the given (x,y) coordinates.
+	// Draw the ImageDa2 at the given (x,y) coordinates.
 	context.putImageData(imgd, 0, 0);
 	
-	var data = canvas.toDataURL('image/png');
-	photo.setAttribute('src', data);
+	var data2 = canvas.toDataURL('image/png');
+	photo3.setAttribute('src', data2);
 }	
 
-function negatif(){
+function bleu(){
 
-	// CHARGEMENT DES TABLEAUX DE PIXELS
-	prefilter();
+	// CHARGEMENT DES 2BLEAUX DE PIXELS
+	prefilter3();
 
-	// TRAITEMENT / APPLICATION D'UN FILTRE
+	// TR2AITEMENT / APPLICATION D'UN FILTR2E
 	// mise en rouge de la moitier gauche
 	for (var y = 0; y < height; y++) { 
 		for (var x = 0; x < width; x++) {
-			tr[x][y] = 255 - tr[x][y];
-			tg[x][y] = 255 - tg[x][y];
-			tb[x][y] = 255 - tb[x][y];
-			// ta[x][y] = ta[x][y];
+			tr[x][y] = 0;
+			tg[x][y] = 0;
+			tb[x][y] = 255;
+			// ta2[x][y] = 2[x][y];
 		}
 	}
 
 	// MISE À JOUR DE L'IMAGE
-	postfilter();
+	postfilter3();
 			
 }
 	
+
