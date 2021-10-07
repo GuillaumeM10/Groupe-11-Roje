@@ -18,10 +18,14 @@ var tr, tg, tb, ta;
 var width, height; 
 var photo, canvas;
 var pix, imgd, context;
+// Variables boutons chargement du filtre et rechargement de l'image
+const reload1 = document.getElementById('reload1')
+const img1 = document.getElementById('photo1')
+const load1 = document.getElementById('load1')
 
 function prefilter(){
 	
-	photo = document.getElementById('photo');
+	photo = document.getElementById('photo1');
 	canvas = document.getElementById('mycanvas');
 	context = canvas.getContext('2d');
 
@@ -82,24 +86,65 @@ function postfilter(){
 	photo.setAttribute('src', data);
 }	
 
-function negatif(){
+function couleurRandom(){
 
 	// CHARGEMENT DES TABLEAUX DE PIXELS
 	prefilter();
 
 	// TRAITEMENT / APPLICATION D'UN FILTRE
 	// mise en rouge de la moitier gauche
+
+	//Couleur de référence (rr rg rb) + tolérance (t)
+	var rr=210, rg=80, rb=70, t=80;
+
+	// Couleur de substitution
+	//var sr=50, sg=120, sb=230;
+	var randomR = Math.floor(Math.random() * 255);
+	var	randomB = Math.floor(Math.random() * 255);
+	var randomG = Math.floor(Math.random() * 255);
+
 	for (var y = 0; y < height; y++) { 
 		for (var x = 0; x < width; x++) {
-			tr[x][y] = 255 - tr[x][y];
-			tg[x][y] = 255 - tg[x][y];
-			tb[x][y] = 255 - tb[x][y];
-			// ta[x][y] = ta[x][y];
+
+			
+				// Si la composante rouge de mon pixel est supérieure à ma 
+				//composante rouge de référence moins la tolérance et inférieure à ma composante rouge plus la tolérance 
+				// alors je remplace la couleur de ce pixel par 
+				// la composante rouge de subsitution ( sinon je ne fait rien).
+
+				if( rr-t<tr[x][y] && tr[x][y]<rr+t && 
+					rb-t<tb[x][y] && tb[x][y]<rb+t && 
+					rg-t<tg[x][y] && tg[x][y]<rg+t ){
+				
+					tr[x][y] = randomR;
+					tb[x][y] = randomB;
+					tg[x][y] = randomG;
+
+					// tr[x][y] = sr;
+					// tb[x][y] = sb;
+					// tg[x][y] = sg;
+				}
+
+			// if (  190<tr[x][y] && tr[x][y]<230
+			// 	&& 50<tb[x][y] && tb[x][y]<90 
+			// 	&& 70<tg[x][y] && tg[x][y]<100)
+			// {	 
+			// 		tr[x][y] = 29 ;//+ tr[x][y];
+			// 		tb[x][y] = 153 ;//+ tb[x][y];
+			// 		tg[x][y] = 29 ;//+ tg[x][y];
+			// 	// ta[x][y] = ta[x][y];
+			}
 		}
+		// MISE À JOUR DE L'IMAGE
+	postfilter();
 	}
 
-	// MISE À JOUR DE L'IMAGE
-	postfilter();
-			
-}
-	
+	// fonction rechargement de l'image
+reload1.addEventListener('click', () => {
+	img1.src = "img/Soup.jpg";
+	console.log(img1);
+})
+//fonction chargement du filtre
+load1.addEventListener('click', () => {
+	couleurRandom();
+})
