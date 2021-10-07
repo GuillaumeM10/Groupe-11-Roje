@@ -110,11 +110,6 @@ function noir(){
 	
 function luminosite(){
 
-	//factor = (259 * (contrast + 255)) / (255 * (259 - contrast))
-	// color = GetPixelColor(x, y)
-	// newRed   = Truncate(factor * (Red(color)   - 128) + 128)
-	// newGreen = Truncate(factor * (Green(color) - 128) + 128)
-	// newBlue  = Truncate(factor * (Blue(color)  - 128) + 128)
 	prefilter2();
 
 	//assignement de la valeur de l'input sur la variable 
@@ -132,34 +127,43 @@ function luminosite(){
 	
 	postfilter2();
 	  
-	// function truncateColor(value) {
-	// 	if (value < 0) {
-	// 		value = 0;
-	// 	} else if (value > 255) {
-	// 		value = 255;
-	// 	}
-		
-	// 	return value;
-	// }
-	  
-	// function applyContrast(data, contrast) {
-	// 	var factor = (259.0 * (contrast + 255.0)) / (255.0 * (259.0 - contrast));
-		
-	// 	for (var i = 0; i < data.length; i+= 4) {
-	// 		data[i] = truncateColor(factor * (data[i] - 128.0) + 128.0);
-	// 		data[i+1] = truncateColor(factor * (data[i+1] - 128.0) + 128.0);
-	// 		data[i+2] = truncateColor(factor * (data[i+2] - 128.0) + 128.0);
-	// 	}
-	// }
 }
+
+function gris(){
+
+	prefilter2();
+
+	//affichage de la valeur de la luminosite sur l'html
+	document.getElementById('valeurLumi').innerHTML = lumi;
+
+		for (var y = 0; y < height; y++) {
+			for (var x = 0; x < width; x++) {
+				if(){
+					tr[x][y] = ;
+					tg[x][y] = ;
+					tb[x][y] = ;
+				}
+			}
+		}
+	
+	postfilter2();
+	  
+}
+
+
 
 // fonction rechargement de l'image
 reload.addEventListener('click', () => {
 	img.src = "img/Le-roi-rouge.jpg";
+	for(var i=0; i < 10; i++){
+		console.log(i*3);
+	}
 })
 //fonction chargement du filtre
 load.addEventListener('click', () => {
-	luminosite();
+	gris();
+	//luminosite();
 	console.log(lumi.value);
 })
+
 
