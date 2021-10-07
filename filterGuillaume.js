@@ -22,6 +22,9 @@ var pix, imgd, context;
 const reload = document.getElementById('reload')
 const img = document.getElementById('photo2')
 const load = document.getElementById('load')
+//gris et gris couleur
+var griss2 = 0;
+
 
 
 function prefilter2(){
@@ -128,20 +131,49 @@ function luminosite(){
 	postfilter2();
 	  
 }
-
+var griss = 0;
 function gris(){
 
 	prefilter2();
 
+		for (var y = 0; y < height; y++) {
+			for (var x = 0; x < width; x++) {
+				//if(){
+					griss = (tr[x][y] + tg[x][y] + tb[x][y])/3;
+					tr[x][y] = griss;
+					tg[x][y] = griss;
+					tb[x][y] = griss;
+				//}
+			}
+		}
+	
+	postfilter2();
+	  
+}
+
+function grisCouleur(){
+
+	prefilter2();
+
+	//assignement de la valeur de l'input sur la variable 
+	var couleur = document.getElementById('couleur').value;
 	//affichage de la valeur de la luminosite sur l'html
-	document.getElementById('valeurLumi').innerHTML = lumi;
+	document.getElementById('valeurCouleur').innerHTML = couleur;
+
+	var couleurNb = couleur;
 
 		for (var y = 0; y < height; y++) {
 			for (var x = 0; x < width; x++) {
-				if(){
-					tr[x][y] = ;
-					tg[x][y] = ;
-					tb[x][y] = ;
+				griss2 = (tr[x][y] + tg[x][y] + tb[x][y])/3;
+				if(tb[x][y] >= couleurNb){
+					tr[x][y] = griss2;
+					tg[x][y] = griss2;
+					tb[x][y] = tb[x][y]
+
+				}else{
+					tr[x][y] = griss2;
+					tg[x][y] = griss2;
+					tb[x][y] = griss2;
 				}
 			}
 		}
@@ -161,7 +193,7 @@ reload.addEventListener('click', () => {
 })
 //fonction chargement du filtre
 load.addEventListener('click', () => {
-	gris();
+	grisCouleur();
 	//luminosite();
 	console.log(lumi.value);
 })
