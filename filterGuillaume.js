@@ -131,25 +131,6 @@ function luminosite(){
 	postfilter2();
 	  
 }
-var griss = 0;
-function gris(){
-
-	prefilter2();
-
-		for (var y = 0; y < height; y++) {
-			for (var x = 0; x < width; x++) {
-				//if(){
-					griss = (tr[x][y] + tg[x][y] + tb[x][y])/3;
-					tr[x][y] = griss;
-					tg[x][y] = griss;
-					tb[x][y] = griss;
-				//}
-			}
-		}
-	
-	postfilter2();
-	  
-}
 
 function grisCouleur(){
 
@@ -181,21 +162,34 @@ function grisCouleur(){
 	postfilter2();
 	  
 }
+function pixelisation(){
+	prefilter2();
+
+	for (var y = 0; y < height; y += 2) {
+		for (var x = 0; x < width; x += 2) {
+			var r = 0, g = 0, b = 0;
+
+			// tr[x][y] = tr[x + 1][y];
+			// tg[x][y] = tg[x][y + 1];
+			// tb[x][y] = tb[x + 1][y + 1];
+			tr[x][y] = r; tr[x+1][y] = r; tr[x][y+1] = r; tr[x+1][y+1] = r;
+			tg[x][y] = g; tg[x+1][y] = g; tg[x][y+1] = g; tg[x+1][y+1] = g;
+			tb[x][y] = b; tb[x+1][y] = b; tb[x][y+1] = b; tb[x+1][y+1] = b;
+
+		}
+	}
+	postfilter2();
+}
 
 
 
 // fonction rechargement de l'image
 reload.addEventListener('click', () => {
 	img.src = "img/Le-roi-rouge.jpg";
-	for(var i=0; i < 10; i++){
-		console.log(i*3);
-	}
 })
 //fonction chargement du filtre
 load.addEventListener('click', () => {
-	grisCouleur();
-	//luminosite();
-	console.log(lumi.value);
+	pixelisation();
 })
 
 
