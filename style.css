@@ -41,13 +41,12 @@ body{
     margin-top: 10vh;
 }
 h2{
-    color: #FFF8F2;
+    color: #C34F5A;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    font-size: 36px;
-    background-color: #C34F5A; 
+    font-size: 40px;
     width: fit-content;
-    padding: 8px 35px;
+    padding-bottom: 16px;
 }
 p{
     font-family: 'Lato', sans-serif;
@@ -142,6 +141,12 @@ button{
     cursor: pointer;
     margin-top: 10vh;
     width: fit-content;
+    transition: 0.2s;
+}
+button:hover{
+    color: #541412;
+    background-color: #D69F3A;
+    transition: 0.2s;
 }
 .button1{
     margin-top: 7vh;
@@ -180,8 +185,6 @@ footer p{
 
     .rouge-titre{
         width: 100%;
-        background-color: #C34F5A;
-
     }
     .rouge h2{
         font-size: 18px;
@@ -206,6 +209,8 @@ footer p{
         width: 100%;
     }
     h2{
+        color: #C34F5A;
+        padding-bottom: 0;
         font-size: 22px;
         width: 100%;
         padding: 5px;
