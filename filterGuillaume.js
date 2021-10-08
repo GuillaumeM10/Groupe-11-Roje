@@ -90,27 +90,7 @@ function postfilter2(){
 	photo2.setAttribute('src', data2);
 }	
 
-function noir(){
 
-	// CHARGEMENT DES 2BLEAUX DE PIXELS
-	prefilter2();
-
-	// TR2AITEMENT / APPLICATION D'UN FILTR2E
-	// mise en rouge de la moitier gauche
-	for (var y = 0; y < height; y++) { 
-		for (var x = 0; x < width; x++) {
-			tr[x][y] = 0;
-			tg[x][y] = 0;
-			tb[x][y] = 0;
-			// ta2[x][y] = 2[x][y];
-		}
-	}
-
-	// MISE À JOUR DE L'IMAGE
-	postfilter2();
-			
-}
-	
 function luminosite(){
 
 	prefilter2();
@@ -162,12 +142,14 @@ function grisCouleur(){
 	postfilter2();
 	  
 }
+
 function pixelisation(){
+
 	prefilter2();
 
-	for (var y = 0; y < height; y += 2) {
-		for (var x = 0; x < width; x += 2) {
-			var r = 0, g = 0, b = 0;
+	for (var y = 0; y < height; y = y + 2) {
+		for (var x = 0; x < width; x = x + 2) {
+			var r = tr[x][y], g = tg[x][y], b = tb[x][y];
 
 			// tr[x][y] = tr[x + 1][y];
 			// tg[x][y] = tg[x][y + 1];
@@ -178,7 +160,9 @@ function pixelisation(){
 
 		}
 	}
+
 	postfilter2();
+
 }
 
 
