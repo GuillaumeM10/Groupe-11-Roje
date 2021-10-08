@@ -197,8 +197,9 @@ input[type=range] {
     -webkit-appearance: none;
     margin-top: -3.6px;
   }
-
-
+#load3, #load4{
+    display: none;
+}
 
 
 @media screen and (max-width: 1110px) {
@@ -281,4 +282,8 @@ input[type=range] {
     .left{
         width: 100%;
     }
+    #load3, #load4{
+        display: block;
+    
+    }   
 }

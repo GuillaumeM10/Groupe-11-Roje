@@ -22,6 +22,8 @@ var pix, imgd, context;
 const reload = document.getElementById('reload')
 const img = document.getElementById('photo2')
 const load = document.getElementById('load')
+const load3 = document.getElementById('load3')
+const load4 = document.getElementById('load4')
 //gris et gris couleur
 var griss2 = 0;
 
@@ -176,10 +178,22 @@ load.addEventListener('click', () => {
 	pixelisation();
 	console.log('oui');
 })
+load3.addEventListener('click', () => {
+	luminosite();
+})
+load4.addEventListener('click', () => {
+	grisCouleur();
+})
+//fonction chargement du filtre
+load.addEventListener('click', () => {
+	pixelisation();
+	console.log('oui');
+})
 lumi.addEventListener('click', () => {
 	luminosite();
 })
 couleur.addEventListener('click', () => {
 	grisCouleur();
 })
+
 
