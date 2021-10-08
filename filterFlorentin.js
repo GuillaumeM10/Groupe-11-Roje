@@ -20,7 +20,7 @@ var photo, canvas;
 var pix, imgd, context;
 // Variables boutons chargement du filtre et rechargement de l'image
 const reload1 = document.getElementById('reload1')
-const img1 = document.getElementById('photo1')
+const img1 = document.getElementById('photo1');;
 const load1 = document.getElementById('load1')
 
 function prefilter(){
@@ -28,6 +28,7 @@ function prefilter(){
 	photo = document.getElementById('photo1');
 	canvas = document.getElementById('mycanvas');
 	context = canvas.getContext('2d');
+
 
 	var x = 0;
 	var y = 0;
