@@ -343,6 +343,7 @@ input[type=range] {
     .popUpOn1 p, .popUpOn2 p, .popUpOn3 p{
         width: 100%;
         margin: 0 10px;
+        margin-left: 0 !important;
     }
     .cross1, .cross2, .cross3{
         position: fixed;
