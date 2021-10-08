@@ -18,6 +18,10 @@ var tr, tg, tb, ta;
 var width, height; 
 var photo3, canvas;
 var pix, imgd, context;
+// Variables boutons chargement du filtre et rechargement de l'image
+const reload2 = document.getElementById('reload2')
+const img2 = document.getElementById('photo3')
+const load2 = document.getElementById('load2')
 
 function prefilter3(){
 	
@@ -82,19 +86,36 @@ function postfilter3(){
 	photo3.setAttribute('src', data2);
 }	
 
-function bleu(){
+function filtretest(){
 
-	// CHARGEMENT DES 2BLEAUX DE PIXELS
+	// CHARGEMENT DES TABLEAUX DE PIXELS
 	prefilter3();
 
-	// TR2AITEMENT / APPLICATION D'UN FILTR2E
+	var trmoy, tgmoy, tbmoy;
+	// TRAITEMENT / APPLICATION D'UN FILTRE
 	// mise en rouge de la moitier gauche
-	for (var y = 0; y < height; y++) { 
-		for (var x = 0; x < width; x++) {
-			tr[x][y] = 0;
-			tg[x][y] = 0;
-			tb[x][y] = 255;
-			// ta2[x][y] = 2[x][y];
+	for (var y = 2; y < height - 2; y++) { 
+		for (var x = 2; x < width - 2; x++) {
+			trmoy = (tr[x - 2][y - 2] + tr[x - 1][y - 2] + tr[x][y - 2] + tr[x + 1][y - 2] + tr[x + 2][y - 2] +
+				     tr[x - 2][y - 1] + tr[x - 1][y - 1] + tr[x][y - 1] + tr[x + 1][y - 1] + tr[x + 2][y - 1] +
+					 tr[x - 2][y    ] + tr[x - 1][y    ] + tr[x][y    ] + tr[x + 1][y    ] + tr[x + 2][y    ] +
+					 tr[x - 2][y + 1] + tr[x - 1][y + 1] + tr[x][y + 1] + tr[x + 1][y + 1] + tr[x + 2][y + 1] +
+					 tr[x - 2][y + 2] + tr[x - 1][y + 2] + tr[x][y + 2] + tr[x + 1][y + 2] + tr[x + 2][y + 2]) / 25 ;
+			tgmoy = (tg[x - 2][y - 2] + tg[x - 1][y - 2] + tg[x][y - 2] + tg[x + 1][y - 2] + tg[x + 2][y - 2] +
+				     tg[x - 2][y - 1] + tg[x - 1][y - 1] + tg[x][y - 1] + tg[x + 1][y - 1] + tg[x + 2][y - 1] +
+				     tg[x - 2][y    ] + tg[x - 1][y    ] + tg[x][y    ] + tg[x + 1][y    ] + tg[x + 2][y    ] +
+				     tg[x - 2][y + 1] + tg[x - 1][y + 1] + tg[x][y + 1] + tg[x + 1][y + 1] + tg[x + 2][y + 1] +
+				     tg[x - 2][y + 2] + tg[x - 1][y + 2] + tg[x][y + 2] + tg[x + 1][y + 2] + tg[x + 2][y + 2]) / 25 ;
+			tbmoy = (tb[x - 2][y - 2] + tb[x - 1][y - 2] + tb[x][y - 2] + tb[x + 1][y - 2] + tb[x + 2][y - 2] +
+				     tb[x - 2][y - 1] + tb[x - 1][y - 1] + tb[x][y - 1] + tb[x + 1][y - 1] + tb[x + 2][y - 1] +
+				     tb[x - 2][y    ] + tb[x - 1][y    ] + tb[x][y    ] + tb[x + 1][y    ] + tb[x + 2][y    ] +
+				     tb[x - 2][y + 1] + tb[x - 1][y + 1] + tb[x][y + 1] + tb[x + 1][y + 1] + tb[x + 2][y + 1] +
+				     tb[x - 2][y + 2] + tb[x - 1][y + 2] + tb[x][y + 2] + tb[x + 1][y + 2] + tb[x + 2][y + 2]) / 25 ;
+			
+			tr[x][y] = trmoy;
+			tg[x][y] = tgmoy;
+			tb[x][y] = tbmoy;
+			// ta[x][y] = ta[x][y];
 		}
 	}
 
@@ -104,3 +125,12 @@ function bleu(){
 }
 	
 
+	// fonction rechargement de l'image
+	reload2.addEventListener('click', () => {
+		img2.src = "img/Untiltled.jpg";
+		console.log(img2);
+	})
+	//fonction chargement du filtre
+	load2.addEventListener('click', () => {
+		filtretest();
+	})
