@@ -132,10 +132,10 @@ Elle représente autant de significations que le feu sacré et les flammes de l'
 								<p class="popGuillaume">Guillaume MENGELATTE<br><br>
 								Filtre Luminosité :<br>
 								Afin d'augmenter ou de diminuer la luminosité je prends une valaur entre -100 et 100 dans l'input sur l'interface FRONT. Je divise par cent cette valeur, le résultat est multiplié par 255 et le résultat de tout ca est additionné a la valeur de la couleur du tableau et on répète la formule pour les trois couleurs tableaux (tr, tb et tg) et ca pour tout les pixels un par un de l'image.<br>
-
+								<br>
 								Filtre Couleur :<br>
 								J'ai commencé par mettre l'image en nuances de gris en faisant la moyenne des trois couleurs d'un pixel et en reatribuant cette moyenne au trois tableaux correspondant a la meme coordonée. J'ai garder cette moyenne dans une variable  "griss2" pour simplifier et éviter de réécrire la formule a chaque fois. Ensuite avec une condition sur le tableau "tb" donc la couleur bleue, j'ai demander de vérifier pour chaques pixel si la valeur est suppérieur ou égale a la valeur entrée dans l'input sur le site. Si cette valeur est supérieur ou égale alors la valeur du tableau "tb" de change pas. Sinon le tableau "tb" est aussi changé en nuance de gris.<br>
-								
+								<br>
 								Filtre Pixel :<br>
 								Pour commencer on a le choix entre une pixelisation sur 2 ou 4 pixels avec une condition, si la valeur de la variable "m" est égale a 0 alors ca sera une pixelisation sur un carré de 2 pixel de coté, sinon si "m" est égale a 1 alors c'est une pixelisation sur un caré de 4 pixel de coté.<br>
 								Pour ce qui est du processus de pixelisation, lorsque c'est avec un carré de 2 de coté alors le pas n'est pas de 1 mais de 2 sur x et y et si c'est un carré de 4 de coté alors le pas est de 4 sur x et y. Pour pixeliser j'ai pris la valeur des 4 ou 16 pixel suivant la taille de la pixelisation puis j'ai fait une moyenne des valeur du tableau "tr" puis j'ai fait la meme chose avec les tableaux "tg" et "tb". J'ai mis ces trois valeur dans trois variales "r", "g" et "b". Puis je réatribut ces 3 valeurs sur chacuns des 4 ou 16 pixels, suivant la taille de la pixelisation.
