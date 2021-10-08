@@ -245,7 +245,13 @@ input[type=range] {
     transform: translate(-50%);
 
 }
-
+.popGuillaume{
+    margin-top: 12vh !important;
+}
+.popGuillaume2{
+    position: fixed;
+    width: 90%;
+}
 @media screen and (max-width: 1110px) {
     body{
         margin: 0 100px 0 100px;
@@ -343,13 +349,25 @@ input[type=range] {
         right: 0;
         top: 0;
     }
+    .cross3{
+        top: -215px !important;
+    }
+    .cross1{
+        top: -42px !important;
+    }
     .orange{
        height: 20px;
+    }
+    .popGuillaume{
+        font-size: 13px;
     }
     .popUpContent{
         position: fixed;
         width: 100%;
         margin-left: 0;
         top: 35%;
+    }
+    .popGuillaume2{
+        top: 0 !important;
     }
 }
