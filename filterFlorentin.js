@@ -139,6 +139,8 @@ function couleurRandom(){
 	postfilter();
 	}
 
+	
+
 	// fonction rechargement de l'image
 reload1.addEventListener('click', () => {
 	img1.src = "img/Soup.jpg";
