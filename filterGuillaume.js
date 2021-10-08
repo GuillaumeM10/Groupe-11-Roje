@@ -24,6 +24,18 @@ const img = document.getElementById('photo2')
 const load = document.getElementById('load')
 const load3 = document.getElementById('load3')
 const load4 = document.getElementById('load4')
+//popUp
+const info1 = document.querySelector('.info1')
+const info2 = document.querySelector('.info2')
+const info3 = document.querySelector('.info3')
+
+const cross1 = document.querySelector('.cross1')
+const cross2 = document.querySelector('.cross2')
+const cross3 = document.querySelector('.cross3')
+
+const popUp1 = document.querySelector('.popUp1');
+const popUp2 = document.querySelector('.popUp2');
+const popUp3 = document.querySelector('.popUp3');
 //gris et gris couleur
 var griss2 = 0;
 
@@ -190,11 +202,34 @@ load4.addEventListener('click', () => {
 //fonction chargement du filtre
 load.addEventListener('click', () => {
 	pixelisation();
-	console.log('oui');
 })
 lumi.addEventListener('click', () => {
 	luminosite();
 })
 couleur.addEventListener('click', () => {
 	grisCouleur();
+})
+//info btn
+info1.addEventListener('click', () => {
+	popUp1.classList.add('popUpOn1')
+})
+cross1.addEventListener('click', () => {
+	popUp1.classList.add('popUp1')
+	popUp1.classList.remove('popUpOn1')
+})
+
+info2.addEventListener('click', () => {
+	popUp2.classList.add('popUpOn2')
+})
+cross2.addEventListener('click', () => {
+	popUp2.classList.add('popUp2')
+	popUp2.classList.remove('popUpOn2')
+})
+
+info3.addEventListener('click', () => {
+	popUp3.classList.add('popUpOn3')
+})
+cross3.addEventListener('click', () => {
+	popUp3.classList.add('popUp3')
+	popUp3.classList.remove('popUpOn3')
 })
