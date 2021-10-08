@@ -46,9 +46,12 @@ Elle représente autant de significations que le feu sacré et les flammes de l'
 							<a href="https://fr.wikipedia.org/wiki/Campbell%27s_Soup_Cans" class="source" target="_blanc">Source 1</a>
 						</div>
 					</div>
-					<button class="btnGuillaume" id="load1">ACTIVER LE FILTRE</button>
-					<button class="btnGuillaume" id="reload1">RELOAD</button>
-					<button class="btnGuillaume info3">INFO</button>
+
+					<div class="btn">
+						<button class="btnGuillaume" id="load1">FILTRE</button>
+						<button class="btnGuillaume" id="reload1">RELOAD</button>
+						<button class="btnGuillaume info3">INFO</button>
+					</div>
 
 					<div class="popUp3">
 						<button class="cross3">x</button>
@@ -129,19 +132,26 @@ Elle représente autant de significations que le feu sacré et les flammes de l'
 						</div>
 						<div class="sources">
 							<p class="source_titre">Sources utilisées : </p>
-							<a href="http://patrimonio-ediciones.com/fr/facsimil/splendor-solis-traite-dalchimie" class="source" target="_blanc">Source 1</a>
-							<a href="https://commons.wikimedia.org/wiki/File:Splendor_Solis_-_Trait%C3%A9_d%27Alchimie_-_Lune_-_Le_roi_rouge_
-							(Les_Sept_Flasques).jpg
-							" class="source" target="_blanc">Source 2</a>
+							<a href="https://initiation.histoiredelart.info/conference/keith-haring-0" class="source" target="_blanc">Source 1</a>
+							<a href="https://www.haring.com/!/art-work/886" class="source" target="_blanc">Source 2</a>
 						</div>
 					</div>
-					<button class="btnGuillaume" id="load2">ACTIVER LE FILTRE</button>
-					<button class="btnGuillaume" id="reload2">RELOAD</button>
-					<button class="btnGuillaume info2">INFO</button>
+
+					<div class="btn">
+						<button class="btnGuillaume" id="load2">FILTRE</button>
+						<button class="btnGuillaume" id="reload2">RELOAD</button>
+						<button class="btnGuillaume info2">INFO</button>
+					</div>
 
 					<div class="popUp2">
 						<button class="cross2">x</button>
-						<p>oui</p>
+						<p>Pour réaliser ce filtre :<br><br>
+							J’ai tout d’abord créé un filtre flou moyenneur puis j’ai ajouté un filtre inversé.<br><br>
+							
+							Pour le filtre flou j’ai récupéré sur l’image, les coordonnées des pixels et de leurs couleurs  R, G et B en zone de 5px par 5px, soit 25 pixels et j’ai fait leur moyenne.<br>
+							J’ai ensuite appliqué les moyennes aux variables R, G et B au pixel ciblé.<br><br>
+							
+							Pour le filtre négatif en soustrait 255 par les valeurs R, G et B de mon image et j’ai appliqué le résultat aux variables R, G et B.</p>
 					</div>
 
 				</div>
