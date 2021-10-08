@@ -24,6 +24,18 @@ const img = document.getElementById('photo2')
 const load = document.getElementById('load')
 const load3 = document.getElementById('load3')
 const load4 = document.getElementById('load4')
+//popUp
+const info1 = document.querySelector('.info1')
+const info2 = document.querySelector('.info2')
+const info3 = document.querySelector('.info3')
+
+const cross1 = document.querySelector('.cross1')
+const cross2 = document.querySelector('.cross2')
+const cross3 = document.querySelector('.cross3')
+
+const popUp1 = document.querySelector('.popUp1');
+const popUp2 = document.querySelector('.popUp2');
+const popUp3 = document.querySelector('.popUp3');
 //gris et gris couleur
 var griss2 = 0;
 
@@ -149,9 +161,21 @@ function pixelisation(){
 
 	prefilter2();
 
-	for (var y = 0; y < height; y = y + 2) {
-		for (var x = 0; x < width; x = x + 2) {
-			var r = tr[x][y], g = tg[x][y], b = tb[x][y];
+		//assignement de la valeur de l'input sur la variable 
+		var pixel = document.getElementById('Pixel').value;
+		//affichage de la valeur de la luminosite sur l'html
+		document.getElementById('valeurPixel').innerHTML = pixel;
+	
+		m = pixel
+		var r, g, b, m;
+		console.log(m);
+
+		if(m == 0){
+			for (var y = 0; y < height - 1; y = y + 2) {
+				for (var x = 0; x < width - 1; x = x + 2) {
+			r = (tr[x][y] + tr[x+1][y] + tr[x][y+1] + tr[x+1][y+1] )/4;
+			g = (tg[x][y] + tg[x+1][y] + tg[x][y+1] + tg[x+1][y+1] )/4;
+			b = (tb[x][y] + tb[x+1][y] + tb[x][y+1] + tb[x+1][y+1] )/4;
 
 			// tr[x][y] = tr[x + 1][y];
 			// tg[x][y] = tg[x][y + 1];
@@ -159,13 +183,28 @@ function pixelisation(){
 			tr[x][y] = r; tr[x+1][y] = r; tr[x][y+1] = r; tr[x+1][y+1] = r;
 			tg[x][y] = g; tg[x+1][y] = g; tg[x][y+1] = g; tg[x+1][y+1] = g;
 			tb[x][y] = b; tb[x+1][y] = b; tb[x][y+1] = b; tb[x+1][y+1] = b;
+				}
+			}
+		} 
+		else if(m == 1){
+			for (var y = 0; y < height - 3; y = y + 4) {
+				for (var x = 0; x < width - 3; x = x + 4) {
+			r = (tr[x][y] + tr[x+1][y] + tr[x+2][y] + tr[x+3][y] + tr[x][y+1] + tr[x+1][y+1] + tr[x+2][y+1] + tr[x+3][y+1] + tr[x][y+2] + tr[x+1][y+2] + tr[x+2][y+2] + tr[x+3][y+2] + tr[x][y+3] + tr[x+1][y+3] + tr[x+2][y+3] + tr[x+3][y+3])/16;
+			g = (tg[x][y] + tg[x+1][y] + tg[x+2][y] + tg[x+3][y] + tg[x][y+1] + tg[x+1][y+1] + tg[x+2][y+1] + tg[x+3][y+1] + tg[x][y+2] + tg[x+1][y+2] + tg[x+2][y+2] + tg[x+3][y+2] + tg[x][y+3] + tg[x+1][y+3] + tg[x+2][y+3] + tg[x+3][y+3])/16;
+			b = (tb[x][y] + tb[x+1][y] + tb[x+2][y] + tb[x+3][y] + tb[x][y+1] + tb[x+1][y+1] + tb[x+2][y+1] + tb[x+3][y+1] + tb[x][y+2] + tb[x+1][y+2] + tb[x+2][y+2] + tb[x+3][y+2] + tb[x][y+3] + tb[x+1][y+3] + tb[x+2][y+3] + tb[x+3][y+3])/16;
 
-		}
-	}
-
-	postfilter2();
-
+			// tr[x][y] = tr[x + 1][y];
+			// tg[x][y] = tg[x][y + 1];
+			// tb[x][y] = tb[x + 1][y + 1];
+			tr[x][y] = r; tr[x+1][y] = r; tr[x+2][y] = r; tr[x+3][y] = r; tr[x][y+1] = r; tr[x+1][y+1] = r; tr[x+2][y+1] = r; tr[x+3][y+1] = r; tr[x][y+2] = r; tr[x+1][y+2] = r; tr[x+2][y+2] = r; tr[x+3][y+2] = r; tr[x][y+3] = r; tr[x+1][y+3] = r; tr[x+2][y+3] = r; tr[x+3][y+3] = r;
+			tg[x][y] = g; tg[x+1][y] = g; tg[x+2][y] = g; tg[x+3][y] = g; tg[x][y+1] = g; tg[x+1][y+1] = g; tg[x+2][y+1] = g; tg[x+3][y+1] = g; tg[x][y+2] = g; tg[x+1][y+2] = g; tg[x+2][y+2] = g; tg[x+3][y+2] = g; tg[x][y+3] = g; tg[x+1][y+3] = g; tg[x+2][y+3] = g; tg[x+3][y+3] = g;
+			tb[x][y] = b; tb[x+1][y] = b; tb[x+2][y] = b; tb[x+3][y] = b; tb[x][y+1] = b; tb[x+1][y+1] = b; tb[x+2][y+1] = b; tb[x+3][y+1] = b; tb[x][y+2] = b; tb[x+1][y+2] = b; tb[x+2][y+2] = b; tb[x+3][y+2] = b; tb[x][y+3] = b; tb[x+1][y+3] = b; tb[x+2][y+3] = b; tb[x+3][y+3] = b;
+				}
+			}
+		}	
+	postfilter2();		
 }
+
 
 
 
@@ -187,7 +226,6 @@ load4.addEventListener('click', () => {
 //fonction chargement du filtre
 load.addEventListener('click', () => {
 	pixelisation();
-	console.log('oui');
 })
 lumi.addEventListener('click', () => {
 	luminosite();
@@ -195,5 +233,27 @@ lumi.addEventListener('click', () => {
 couleur.addEventListener('click', () => {
 	grisCouleur();
 })
+//info btn
+info1.addEventListener('click', () => {
+	popUp1.classList.add('popUpOn1')
+})
+cross1.addEventListener('click', () => {
+	popUp1.classList.add('popUp1')
+	popUp1.classList.remove('popUpOn1')
+})
 
+info2.addEventListener('click', () => {
+	popUp2.classList.add('popUpOn2')
+})
+cross2.addEventListener('click', () => {
+	popUp2.classList.add('popUp2')
+	popUp2.classList.remove('popUpOn2')
+})
 
+info3.addEventListener('click', () => {
+	popUp3.classList.add('popUpOn3')
+})
+cross3.addEventListener('click', () => {
+	popUp3.classList.add('popUp3')
+	popUp3.classList.remove('popUpOn3')
+})

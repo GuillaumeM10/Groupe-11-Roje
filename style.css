@@ -101,7 +101,7 @@ h4{
 .text{
     width: 408px;
 }
-.text p{
+.text p, label{
     font-size: 16px;
     margin-top: 30px;
     font-family: 'Lato', sans-serif;
@@ -128,7 +128,7 @@ h4{
     margin: 0;
 }
 .control{
-    margin-top: 10vh;
+    margin-top: 2vh;
 }
 button{
     font-family: 'Lato', sans-serif;
@@ -153,6 +153,12 @@ button:hover{
 }
 .btnGuillaume{
     margin-top: 2vh;
+}
+.btn, .btnMobil{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 .soup h2, .roi h2, .untiltled h2{
     margin-bottom: 20px;
@@ -200,11 +206,52 @@ input[type=range] {
 #load3, #load4{
     display: none;
 }
+.popUp1, .popUp2, .popUp3{
+    display: none;
+    z-index: 10;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.popUpOn1, .popUpOn2, .popUpOn3{
+    display: block !important;
+}
 
+.popUpOn1 p, .popUpOn2 p, .popUpOn3 p{
+   /* text-align: center;*/
+    color: #FFF8F2;
+    margin-top: 22vh;
+}
+.cross1, .cross2, .cross3{
+    position: fixed;
+    right: 5vw;
+    top: -5vh;
+}
+.orange{
+    background-color: rgba(214, 159, 58, 1);
+   height: 50px;
+    width: 100%;
+    margin-top: 10px;
+}
+.popUpContent{
+    position: fixed;
+    width: 50%;
+    left: 50%;
+    transform: translate(-50%);
+
+}
 
 @media screen and (max-width: 1110px) {
     body{
         margin: 0 100px 0 100px;
+    }
+    footer{
+        margin: 85px -100px 0 -280px;
     }
 }
 
@@ -286,4 +333,23 @@ input[type=range] {
         display: block;
     
     }   
+    
+    .popUpOn1 p, .popUpOn2 p, .popUpOn3 p{
+        width: 100%;
+        margin: 0 10px;
+    }
+    .cross1, .cross2, .cross3{
+        position: fixed;
+        right: 0;
+        top: 0;
+    }
+    .orange{
+       height: 20px;
+    }
+    .popUpContent{
+        position: fixed;
+        width: 100%;
+        margin-left: 0;
+        top: 35%;
+    }
 }
