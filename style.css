@@ -250,6 +250,9 @@ input[type=range] {
     body{
         margin: 0 100px 0 100px;
     }
+    footer{
+        margin: 85px -100px 0 -280px;
+    }
 }
 
 @media screen and (max-width: 800px) {
@@ -330,4 +333,23 @@ input[type=range] {
         display: block;
     
     }   
+    
+    .popUpOn1 p, .popUpOn2 p, .popUpOn3 p{
+       /* text-align: center;*/
+        color: #FFF8F2;
+        margin-left: 0;
+    }
+    .cross1, .cross2, .cross3{
+        position: fixed;
+        right: 0;
+        top: 0;
+    }
+    .orange{
+       height: 20px;
+    }
+    .popUpContent{
+        position: fixed;
+        width: 100%;
+        left: 0;
+    }
 }
