@@ -60,7 +60,17 @@ p{
     width: 100%;
     margin: 150px 0 250px 0;
     text-align: center;
+    padding: 10px;
+    animation: bounce 0.6s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
 }
+
+@keyframes bounce {
+    from { transform: translate3d(0, 0, 0);     }
+    to   { transform: translate3d(0, 10px, 0); }
+  }
+  
 #fleche{
     cursor: pointer;
 }
@@ -128,7 +138,7 @@ h4{
     margin: 0;
 }
 .control{
-    margin-top: 10vh;
+    margin-top: 2vh;
 }
 button{
     font-family: 'Lato', sans-serif;
@@ -245,7 +255,13 @@ input[type=range] {
     transform: translate(-50%);
 
 }
-
+.popGuillaume{
+    margin-top: 12vh !important;
+}
+.popGuillaume2{
+    position: fixed;
+    width: 90%;
+}
 @media screen and (max-width: 1110px) {
     body{
         margin: 0 100px 0 100px;
@@ -337,19 +353,32 @@ input[type=range] {
     .popUpOn1 p, .popUpOn2 p, .popUpOn3 p{
         width: 100%;
         margin: 0 10px;
+        margin-left: 0 !important;
     }
     .cross1, .cross2, .cross3{
         position: fixed;
         right: 0;
         top: 0;
     }
+    .cross3{
+        top: -215px !important;
+    }
+    .cross1{
+        top: -42px !important;
+    }
     .orange{
        height: 20px;
+    }
+    .popGuillaume{
+        font-size: 13px;
     }
     .popUpContent{
         position: fixed;
         width: 100%;
         margin-left: 0;
         top: 35%;
+    }
+    .popGuillaume2{
+        top: 0 !important;
     }
 }

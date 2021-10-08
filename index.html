@@ -5,6 +5,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Roje</title>
 		<link rel="stylesheet" href="style.css" type="text/css" media="all">
+		<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+		<link rel="shortcut icon" href="img/Logo-roje.png">
     </head>
     <body>
 		
@@ -18,7 +20,7 @@
 			<p>La couleur rouge est ambivalente dans l’occident : 
 Elle représente autant de significations que le feu sacré et les flammes de l'enfer, l'amour vrai et le sang des crimes. L’homme a maitrîsé le rouge très tôt, notamment dans les peintures à l’âge paléolithique.
 			</p>
-			<p>Par extension, le rouge est également un signe de puissance, de souveraineté, une couleur révêtue tout en haut de la hiérarchie dans le culte catholique. C’est la couleur du grade le plus élevé en karaté et au judo (9e et 10e dan). C’est également un symbole de révolution, souvent visible dans les affiches de propagandes. Pyschologiquement c’est une couleur qui réprésente aussi bien la joie de vivre que la passion, la vigueur ou le désir amoureux. C’est aussi un signe d’interdiction et d’avertissement, souvent utilisé dans la signalisation, en effet la visibilité de cette couleur la rend facilement distinguable, c’est pour celà qu’elle est utilisée par les pompiers. C’est enfin un signe de sanction / correction comme le carton rouge au football, ou le stylo rouge utilisé par les professeurs. 
+			<p>Par extension, le rouge est également un signe de puissance, de souveraineté, une couleur révêtue tout en haut de la hiérarchie dans le culte catholique. C’est la couleur du grade le plus élevé en karaté et au judo (9e et 10e dan). C’est également un symbole de révolution, souvent visible dans les affiches de propagandes. Psychologiquement c’est une couleur qui réprésente aussi bien la joie de vivre que la passion, la vigueur ou le désir amoureux. C’est aussi un signe d’interdiction et d’avertissement, souvent utilisé dans la signalisation, en effet la visibilité de cette couleur la rend facilement distinguable, c’est pour celà qu’elle est utilisée par les pompiers. C’est enfin un signe de sanction / correction comme le carton rouge au football, ou le stylo rouge utilisé par les professeurs. 
 			</p>
 			<div class="fleche">
 				<a href="#selec"><img src="img/fleche.svg" id="fleche"></a>
@@ -26,14 +28,35 @@ Elle représente autant de significations que le feu sacré et les flammes de l'
 		</div>
 
 		<div class="selec">
-			<h3 id="selec">Notre sélection d’oeuvres</h3>
+			<h3 id="selec" data-aos="fade-top"
+			data-aos-offset="0"
+			data-aos-delay="0"
+			data-aos-duration="500"
+			data-aos-easing="ease-in-out"
+			data-aos-mirror="true"
+			data-aos-once="false"
+			data-aos-anchor-placement="top-center">Notre sélection d’oeuvres</h3>
 			<div class="soup">
-				<div class="left">
+				<div class="left"  data-aos="fade-right"
+				data-aos-offset="50"
+				data-aos-delay="0"
+				data-aos-duration="500"
+				data-aos-easing="ease-in-out"
+				data-aos-mirror="true"
+				data-aos-once="false"
+				data-aos-anchor-placement="top-center">
 					<h2 class="rouge-titre">CAMPBELL’S SOUP CANS</h2>
 					<img src="img/Soup.jpg" id="photo1" alt="" class="img">
 					<canvas id="mycanvas"></canvas>
 				</div>
-				<div class="right">
+				<div class="right"  data-aos="fade-left"
+				data-aos-offset="0"
+				data-aos-delay="0"
+				data-aos-duration="500"
+				data-aos-easing="ease-in-out"
+				data-aos-mirror="true"
+				data-aos-once="false"
+				data-aos-anchor-placement="top-center">
 					<div class="">
 						<h4>ANDY WARHOL - 1962</h4>
 						<div class="text">
@@ -48,7 +71,8 @@ Elle représente autant de significations que le feu sacré et les flammes de l'
 					</div>
 
 					<div class="btn">
-						<button class="btnGuillaume" id="load1">FILTRE</button>
+						<button class="btnGuillaume" id="load1">1</button>
+						<button class="btnGuillaume" id="load5">2</button>
 						<button class="btnGuillaume" id="reload1">RELOAD</button>
 						<button class="btnGuillaume info3">INFO</button>
 					</div>
@@ -56,7 +80,17 @@ Elle représente autant de significations que le feu sacré et les flammes de l'
 					<div class="popUp3">
 						<div class="popUpContent">
 							<button class="cross3">x</button>
-							<p>non</p>
+							<p>	Florentin SENDRA <br><br>								Filtre noir et blanc : <br>Je réduis l'intensité de ma couleur rouge par trois et je récupère uniquement 1% de ma couleur verte.
+								Afin d'appliquer l'effet sur la majorité de rouge de mon image.
+								Si ma variable nb est supérieure à 200 alors, je remplace mes couleurs par la couleur blanche sinon
+								je la remplace par la couleur noir.<br><br>
+							
+								Filtre remplacement couleur rouge : <br>Si la composante rouge de mon pixel est supérieure à ma 
+								composante rouge de référence moins la tolérance et inférieure à ma composante rouge plus la tolérance 
+								alors je remplace la couleur de ce pixel par 
+								la composante rouge de subsitution ( sinon je ne fait rien).
+							</p>
+							<div class="orange"></div>
 						</div>
 					</div>
 
@@ -64,13 +98,27 @@ Elle représente autant de significations que le feu sacré et les flammes de l'
 			</div>
 
 			<div class="roi">
-				<div class="left">
+				<div class="left" data-aos="fade-right"
+				data-aos-offset="150"
+				data-aos-delay="0"
+				data-aos-duration="500"
+				data-aos-easing="ease-in-out"
+				data-aos-mirror="true"
+				data-aos-once="false"
+				data-aos-anchor-placement="top-center">
 					<h2 class="rouge-titre">LUNE - LE ROI ROUGE</h2>
 					<img src="img/Le-roi-rouge.jpg" id="photo2" alt="" class="img2">
 					<canvas id="mycanvas2"></canvas>
 					
 				</div>
-				<div class="right">
+				<div class="right" data-aos="fade-left"
+				data-aos-offset="0"
+				data-aos-delay="0"
+				data-aos-duration="500"
+				data-aos-easing="ease-in-out"
+				data-aos-mirror="true"
+				data-aos-once="false"
+				data-aos-anchor-placement="top-center">
 					<div class="">
 						<h4>ARTISTES ANONYME - XVIÈME SIÈCLE</h4>
 						<div class="text">
@@ -99,6 +147,11 @@ Elle représente autant de significations que le feu sacré et les flammes de l'
 						<input id="couleur" type="range" value="0" min="0" max="255">
 						<br>
 
+						<label id="labalPixel">Pixel : <span id="valeurPixel">0</span></label>
+						<br>
+						<input id="Pixel" type="range" value="0" min="0" max="1">
+						<br>
+
 						<div class="btnMobil">
 							<button class="btnGuillaume" id="load3">LUMI</button>
 							<button class="btnGuillaume" id="load4">COULEUR</button>
@@ -110,9 +163,20 @@ Elle représente autant de significations que le feu sacré et les flammes de l'
 							<button class="btnGuillaume info1">INFO</button>
 						</div>		
 						<div class="popUp1">
-							<div class="popUpContent">
+							<div class="popUpContent popGuillaume2">
 								<button class="cross1">x</button>
-								<p>hehehehee</p>
+								<p class="popGuillaume">Guillaume MENGELATTE<br><br>
+								Filtre Luminosité :<br>
+								Afin d'augmenter ou de diminuer la luminosité je prends une valaur entre -100 et 100 dans l'input sur l'interface FRONT. Je divise par cent cette valeur, le résultat est multiplié par 255 et le résultat de tout ca est additionné a la valeur de la couleur du tableau et on répète la formule pour les trois couleurs tableaux (tr, tb et tg) et ca pour tout les pixels un par un de l'image.<br>
+								<br>
+								Filtre Couleur :<br>
+								J'ai commencé par mettre l'image en nuances de gris en faisant la moyenne des trois couleurs d'un pixel et en reatribuant cette moyenne au trois tableaux correspondant a la meme coordonée. J'ai garder cette moyenne dans une variable  "griss2" pour simplifier et éviter de réécrire la formule a chaque fois. Ensuite avec une condition sur le tableau "tb" donc la couleur bleue, j'ai demander de vérifier pour chaques pixel si la valeur est suppérieur ou égale a la valeur entrée dans l'input sur le site. Si cette valeur est supérieur ou égale alors la valeur du tableau "tb" de change pas. Sinon le tableau "tb" est aussi changé en nuance de gris.<br>
+								<br>
+								Filtre Pixel :<br>
+								Pour commencer on a le choix entre une pixelisation sur 2 ou 4 pixels avec une condition, si la valeur de la variable "m" est égale a 0 alors ca sera une pixelisation sur un carré de 2 pixel de coté, sinon si "m" est égale a 1 alors c'est une pixelisation sur un caré de 4 pixel de coté.<br>
+								Pour ce qui est du processus de pixelisation, lorsque c'est avec un carré de 2 de coté alors le pas n'est pas de 1 mais de 2 sur x et y et si c'est un carré de 4 de coté alors le pas est de 4 sur x et y. Pour pixeliser j'ai pris la valeur des 4 ou 16 pixel suivant la taille de la pixelisation puis j'ai fait une moyenne des valeur du tableau "tr" puis j'ai fait la meme chose avec les tableaux "tg" et "tb". J'ai mis ces trois valeur dans trois variales "r", "g" et "b". Puis je réatribut ces 3 valeurs sur chacuns des 4 ou 16 pixels, suivant la taille de la pixelisation.
+								</p>
+								<div class="orange"></div>
 							</div>
 						</div>
 					</div>
@@ -121,16 +185,30 @@ Elle représente autant de significations que le feu sacré et les flammes de l'
 			</div>
 
 			<div class="untiltled">
-				<div class="left">
+				<div class="left" data-aos="fade-right"
+				data-aos-offset="0"
+				data-aos-delay="0"
+				data-aos-duration="500"
+				data-aos-easing="ease-in-out"
+				data-aos-mirror="true"
+				data-aos-once="false"
+				data-aos-anchor-placement="top-center">
 					<h2 class="rouge-titre">KEITH HARING - 1982</h2>
 					<img src="img/Untiltled.jpg" id="photo3" alt="" class="img2">
 					<canvas id="mycanvas3"></canvas>
 				</div>
-				<div class="right">
+				<div class="right" data-aos="fade-left"
+				data-aos-offset="0"
+				data-aos-delay="0"
+				data-aos-duration="500"
+				data-aos-easing="ease-in-out"
+				data-aos-mirror="true"
+				data-aos-once="false"
+				data-aos-anchor-placement="top-center">
 					<div class="">
 						<h4>ANDY WARHOL - 1962</h4>
 						<div class="text">
-							<p>La créativité ludique et colorée d’un artiste underground de l’art Graffiti et de la Bad Painting, dans les années 1980 aux Etats-Unis</p>
+							<p>Matéo SIMONNET<br><br>La créativité ludique et colorée d’un artiste underground de l’art Graffiti et de la Bad Painting, dans les années 1980 aux Etats-Unis</p>
 							<p>Cette oeuvre est une acrylique sur vinyle, et fait partie du mouvement de l'art contemporain</p>
 							<p>Elle mesure 457cm de large pour 457cm de hauteur.</p>
 						</div>
@@ -156,7 +234,7 @@ Elle représente autant de significations que le feu sacré et les flammes de l'
 								Pour le filtre flou j’ai récupéré sur l’image, les coordonnées des pixels et de leurs couleurs  R, G et B en zone de 5px par 5px, soit 25 pixels et j’ai fait leur moyenne.<br>
 								J’ai ensuite appliqué les moyennes aux variables R, G et B au pixel ciblé.<br><br>
 								
-								Pour le filtre négatif en soustrait 255 par les valeurs R, G et B de mon image et j’ai appliqué le résultat aux variables R, G et B.
+								Pour le filtre négatif on soustrait 255 par les valeurs R, G et B de mon image et j’ai appliqué le résultat aux variables R, G et B.
 							</p>
 							<div class="orange"></div>
 						</div>
@@ -170,13 +248,22 @@ Elle représente autant de significations que le feu sacré et les flammes de l'
 		</footer>
 		
 		<!-- <input type="file" id="file_input" onchange="imgLoad();"> -->
-			
 		<script src="filterFlorentin.js"></script>
 		<script src="filterGuillaume.js"></script>
 		<script src="filterMateo.js"></script>
-		<script src="https://unpkg.com/scrollreveal"></script>
-		<script src="main.js"></script>
-
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script>
+	AOS.init({
+	   disable: function() {
+		  var minWidth = 950;
+		  return window.innerWidth < maxWidth;
+	   }
+	});
+ </script>
 	</body>
 
 </html>
