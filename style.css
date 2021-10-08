@@ -223,7 +223,7 @@ input[type=range] {
 }
 
 .popUpOn1 p, .popUpOn2 p, .popUpOn3 p{
-    text-align: center;
+   /* text-align: center;*/
     color: #FFF8F2;
     margin-top: 22vh;
 }
@@ -231,6 +231,19 @@ input[type=range] {
     position: fixed;
     right: 5vw;
     top: -5vh;
+}
+.orange{
+    background-color: rgba(214, 159, 58, 1);
+   height: 50px;
+    width: 100%;
+    margin-top: 10px;
+}
+.popUpContent{
+    position: fixed;
+    width: 50%;
+    left: 50%;
+    transform: translate(-50%);
+
 }
 
 @media screen and (max-width: 1110px) {
