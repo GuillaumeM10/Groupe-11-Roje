@@ -174,6 +174,12 @@ reload.addEventListener('click', () => {
 //fonction chargement du filtre
 load.addEventListener('click', () => {
 	pixelisation();
+	console.log('oui');
 })
-
+lumi.addEventListener('click', () => {
+	luminosite();
+})
+couleur.addEventListener('click', () => {
+	grisCouleur();
+})
 
