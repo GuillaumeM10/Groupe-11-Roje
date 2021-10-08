@@ -93,7 +93,7 @@ function filtretest(){
 
 	var trmoy, tgmoy, tbmoy;
 	// TRAITEMENT / APPLICATION D'UN FILTRE
-	// mise en rouge de la moitier gauche
+	// filtre flou
 	for (var y = 2; y < height - 2; y++) { 
 		for (var x = 2; x < width - 2; x++) {
 			trmoy = (tr[x - 2][y - 2] + tr[x - 1][y - 2] + tr[x][y - 2] + tr[x + 1][y - 2] + tr[x + 2][y - 2] +
@@ -116,6 +116,14 @@ function filtretest(){
 			tg[x][y] = tgmoy;
 			tb[x][y] = tbmoy;
 			// ta[x][y] = ta[x][y];
+
+			// filtre inversé
+
+			tr[x][y] = 255 - tr[x][y];
+			tg[x][y] = 255 - tg[x][y];
+			tb[x][y] = 255 - tb[x][y];
+
+			
 		}
 	}
 
