@@ -20,16 +20,14 @@ var photo, canvas;
 var pix, imgd, context;
 // Variables boutons chargement du filtre et rechargement de l'image
 const reload1 = document.getElementById('reload1')
-const img1 = document.getElementById('photo1');;
+const img1 = document.getElementById('photo1')
 const load1 = document.getElementById('load1')
-const load5 = document.getElementById('load5')
 
 function prefilter(){
 	
 	photo = document.getElementById('photo1');
 	canvas = document.getElementById('mycanvas');
 	context = canvas.getContext('2d');
-
 
 	var x = 0;
 	var y = 0;
@@ -122,54 +120,13 @@ function couleurRandom(){
 					tb[x][y] = randomB;
 					tg[x][y] = randomG;
 
-					// tr[x][y] = sr;
-					// tb[x][y] = sb;
-					// tg[x][y] = sg;
-				}
-
-			// if (  190<tr[x][y] && tr[x][y]<230
-			// 	&& 50<tb[x][y] && tb[x][y]<90 
-			// 	&& 70<tg[x][y] && tg[x][y]<100)
-			// {	 
-			// 		tr[x][y] = 29 ;//+ tr[x][y];
-			// 		tb[x][y] = 153 ;//+ tb[x][y];
-			// 		tg[x][y] = 29 ;//+ tg[x][y];
-			// 	// ta[x][y] = ta[x][y];
-			}
 		}
-		// MISE À JOUR DE L'IMAGE
-	postfilter();
 	}
-
-	function filtrenb(){
-
-        // CHARGEMENT DES TABLEAUX DE PIXELS
-        prefilter();
-
-        for (var y = 0; y < height; y ++) { 
-            for (var x = 0; x < width; x ++) {
-
-                // Je réduis l'intensité de ma couleur rouge par trois et je récupère uniquement 1% de ma couleur verte.
-                // Afin d'appliquer l'effet sur la majorité de rouge de mon image.
-                // Si ma variable nb est supérieure à 200 alors, je remplace mes couleurs par la couleur blanche sinon
-                // je la remplace par la couleur noir.
-
-                var nb = (tr[x][y]/3 + (tg[x][y] * 0.01) + tb[x][y]);
-                if (nb > 200) {
-                    nb = 255;}
-                    else { nb = 0;
-                    }
-                    tr[x][y] = nb;
-                    tb[x][y] = nb;
-                    tg[x][y] = nb;
-                }
-                           
-            }
+			// MISE À JOUR DE L'IMAGE
 			postfilter();
-        }
+		}
 
-	
-
+}
 	// fonction rechargement de l'image
 reload1.addEventListener('click', () => {
 	img1.src = "img/Soup.jpg";
@@ -177,8 +134,5 @@ reload1.addEventListener('click', () => {
 })
 //fonction chargement du filtre
 load1.addEventListener('click', () => {
-	filtrenb();
-})
-load5.addEventListener('click', () => {
 	couleurRandom();
 })

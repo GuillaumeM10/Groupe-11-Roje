@@ -128,7 +128,7 @@ h4{
     margin: 0;
 }
 .control{
-    margin-top: 2vh;
+    margin-top: 10vh;
 }
 button{
     font-family: 'Lato', sans-serif;
@@ -245,13 +245,7 @@ input[type=range] {
     transform: translate(-50%);
 
 }
-.popGuillaume{
-    margin-top: 12vh !important;
-}
-.popGuillaume2{
-    position: fixed;
-    width: 90%;
-}
+
 @media screen and (max-width: 1110px) {
     body{
         margin: 0 100px 0 100px;
@@ -343,32 +337,19 @@ input[type=range] {
     .popUpOn1 p, .popUpOn2 p, .popUpOn3 p{
         width: 100%;
         margin: 0 10px;
-        margin-left: 0 !important;
     }
     .cross1, .cross2, .cross3{
         position: fixed;
         right: 0;
         top: 0;
     }
-    .cross3{
-        top: -215px !important;
-    }
-    .cross1{
-        top: -42px !important;
-    }
     .orange{
        height: 20px;
-    }
-    .popGuillaume{
-        font-size: 13px;
     }
     .popUpContent{
         position: fixed;
         width: 100%;
         margin-left: 0;
         top: 35%;
-    }
-    .popGuillaume2{
-        top: 0 !important;
     }
 }

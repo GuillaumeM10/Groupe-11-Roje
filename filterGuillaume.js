@@ -161,50 +161,26 @@ function pixelisation(){
 
 	prefilter2();
 
-		//assignement de la valeur de l'input sur la variable 
-		var pixel = document.getElementById('Pixel').value;
-		//affichage de la valeur de la luminosite sur l'html
-		document.getElementById('valeurPixel').innerHTML = pixel;
-	
-		m = pixel
-		var r, g, b, m;
-		console.log(m);
+		for (var y = 0; y < height - 3; y = y + 4) {
+			for (var x = 0; x < width - 3; x = x + 4) {
+				var r, g, b;
+				
+				r = (tr[x][y] + tr[x+1][y] + tr[x+2][y] + tr[x+3][y] + tr[x][y+1] + tr[x+1][y+1] + tr[x+2][y+1] + tr[x+3][y+1] + tr[x][y+2] + tr[x+1][y+2] + tr[x+2][y+2] + tr[x+3][y+2] + tr[x][y+3] + tr[x+1][y+3] + tr[x+2][y+3] + tr[x+3][y+3])/16;
+				g = (tg[x][y] + tg[x+1][y] + tg[x+2][y] + tg[x+3][y] + tg[x][y+1] + tg[x+1][y+1] + tg[x+2][y+1] + tg[x+3][y+1] + tg[x][y+2] + tg[x+1][y+2] + tg[x+2][y+2] + tg[x+3][y+2] + tg[x][y+3] + tg[x+1][y+3] + tg[x+2][y+3] + tg[x+3][y+3])/16;
+				b = (tb[x][y] + tb[x+1][y] + tb[x+2][y] + tb[x+3][y] + tb[x][y+1] + tb[x+1][y+1] + tb[x+2][y+1] + tb[x+3][y+1] + tb[x][y+2] + tb[x+1][y+2] + tb[x+2][y+2] + tb[x+3][y+2] + tb[x][y+3] + tb[x+1][y+3] + tb[x+2][y+3] + tb[x+3][y+3])/16;
 
-		if(m == 0){
-			for (var y = 0; y < height - 1; y = y + 2) {
-				for (var x = 0; x < width - 1; x = x + 2) {
-			r = (tr[x][y] + tr[x+1][y] + tr[x][y+1] + tr[x+1][y+1] )/4;
-			g = (tg[x][y] + tg[x+1][y] + tg[x][y+1] + tg[x+1][y+1] )/4;
-			b = (tb[x][y] + tb[x+1][y] + tb[x][y+1] + tb[x+1][y+1] )/4;
+				// tr[x][y] = tr[x + 1][y];
+				// tg[x][y] = tg[x][y + 1];
+				// tb[x][y] = tb[x + 1][y + 1];
+				tr[x][y] = r; tr[x+1][y] = r; tr[x+2][y] = r; tr[x+3][y] = r; tr[x][y+1] = r; tr[x+1][y+1] = r; tr[x+2][y+1] = r; tr[x+3][y+1] = r; tr[x][y+2] = r; tr[x+1][y+2] = r; tr[x+2][y+2] = r; tr[x+3][y+2] = r; tr[x][y+3] = r; tr[x+1][y+3] = r; tr[x+2][y+3] = r; tr[x+3][y+3] = r;
+				tg[x][y] = g; tg[x+1][y] = g; tg[x+2][y] = g; tg[x+3][y] = g; tg[x][y+1] = g; tg[x+1][y+1] = g; tg[x+2][y+1] = g; tg[x+3][y+1] = g; tg[x][y+2] = g; tg[x+1][y+2] = g; tg[x+2][y+2] = g; tg[x+3][y+2] = g; tg[x][y+3] = g; tg[x+1][y+3] = g; tg[x+2][y+3] = g; tg[x+3][y+3] = g;
+				tb[x][y] = b; tb[x+1][y] = b; tb[x+2][y] = b; tb[x+3][y] = b; tb[x][y+1] = b; tb[x+1][y+1] = b; tb[x+2][y+1] = b; tb[x+3][y+1] = b; tb[x][y+2] = b; tb[x+1][y+2] = b; tb[x+2][y+2] = b; tb[x+3][y+2] = b; tb[x][y+3] = b; tb[x+1][y+3] = b; tb[x+2][y+3] = b; tb[x+3][y+3] = b;
+		}
 
-			// tr[x][y] = tr[x + 1][y];
-			// tg[x][y] = tg[x][y + 1];
-			// tb[x][y] = tb[x + 1][y + 1];
-			tr[x][y] = r; tr[x+1][y] = r; tr[x][y+1] = r; tr[x+1][y+1] = r;
-			tg[x][y] = g; tg[x+1][y] = g; tg[x][y+1] = g; tg[x+1][y+1] = g;
-			tb[x][y] = b; tb[x+1][y] = b; tb[x][y+1] = b; tb[x+1][y+1] = b;
-				}
-			}
-		} 
-		else if(m == 1){
-			for (var y = 0; y < height - 3; y = y + 4) {
-				for (var x = 0; x < width - 3; x = x + 4) {
-			r = (tr[x][y] + tr[x+1][y] + tr[x+2][y] + tr[x+3][y] + tr[x][y+1] + tr[x+1][y+1] + tr[x+2][y+1] + tr[x+3][y+1] + tr[x][y+2] + tr[x+1][y+2] + tr[x+2][y+2] + tr[x+3][y+2] + tr[x][y+3] + tr[x+1][y+3] + tr[x+2][y+3] + tr[x+3][y+3])/16;
-			g = (tg[x][y] + tg[x+1][y] + tg[x+2][y] + tg[x+3][y] + tg[x][y+1] + tg[x+1][y+1] + tg[x+2][y+1] + tg[x+3][y+1] + tg[x][y+2] + tg[x+1][y+2] + tg[x+2][y+2] + tg[x+3][y+2] + tg[x][y+3] + tg[x+1][y+3] + tg[x+2][y+3] + tg[x+3][y+3])/16;
-			b = (tb[x][y] + tb[x+1][y] + tb[x+2][y] + tb[x+3][y] + tb[x][y+1] + tb[x+1][y+1] + tb[x+2][y+1] + tb[x+3][y+1] + tb[x][y+2] + tb[x+1][y+2] + tb[x+2][y+2] + tb[x+3][y+2] + tb[x][y+3] + tb[x+1][y+3] + tb[x+2][y+3] + tb[x+3][y+3])/16;
 
-			// tr[x][y] = tr[x + 1][y];
-			// tg[x][y] = tg[x][y + 1];
-			// tb[x][y] = tb[x + 1][y + 1];
-			tr[x][y] = r; tr[x+1][y] = r; tr[x+2][y] = r; tr[x+3][y] = r; tr[x][y+1] = r; tr[x+1][y+1] = r; tr[x+2][y+1] = r; tr[x+3][y+1] = r; tr[x][y+2] = r; tr[x+1][y+2] = r; tr[x+2][y+2] = r; tr[x+3][y+2] = r; tr[x][y+3] = r; tr[x+1][y+3] = r; tr[x+2][y+3] = r; tr[x+3][y+3] = r;
-			tg[x][y] = g; tg[x+1][y] = g; tg[x+2][y] = g; tg[x+3][y] = g; tg[x][y+1] = g; tg[x+1][y+1] = g; tg[x+2][y+1] = g; tg[x+3][y+1] = g; tg[x][y+2] = g; tg[x+1][y+2] = g; tg[x+2][y+2] = g; tg[x+3][y+2] = g; tg[x][y+3] = g; tg[x+1][y+3] = g; tg[x+2][y+3] = g; tg[x+3][y+3] = g;
-			tb[x][y] = b; tb[x+1][y] = b; tb[x+2][y] = b; tb[x+3][y] = b; tb[x][y+1] = b; tb[x+1][y+1] = b; tb[x+2][y+1] = b; tb[x+3][y+1] = b; tb[x][y+2] = b; tb[x+1][y+2] = b; tb[x+2][y+2] = b; tb[x+3][y+2] = b; tb[x][y+3] = b; tb[x+1][y+3] = b; tb[x+2][y+3] = b; tb[x+3][y+3] = b;
-				}
-			}
-		}	
-	postfilter2();		
+	}
+	postfilter2();
 }
-
 
 
 
