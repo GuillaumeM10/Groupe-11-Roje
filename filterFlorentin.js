@@ -22,6 +22,7 @@ var pix, imgd, context;
 const reload1 = document.getElementById('reload1')
 const img1 = document.getElementById('photo1');;
 const load1 = document.getElementById('load1')
+const load5 = document.getElementById('load5')
 
 function prefilter(){
 	
@@ -162,9 +163,9 @@ function couleurRandom(){
                     tb[x][y] = nb;
                     tg[x][y] = nb;
                 }
-                            // MISE À JOUR DE L'IMAGE
-    postfilter();
+                           
             }
+			postfilter();
         }
 
 	
@@ -177,4 +178,7 @@ reload1.addEventListener('click', () => {
 //fonction chargement du filtre
 load1.addEventListener('click', () => {
 	filtrenb();
+})
+load5.addEventListener('click', () => {
+	couleurRandom();
 })
